@@ -1,0 +1,72 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+DLGINCLUDE 1 "dialog.h"
+
+DLGTEMPLATE DID_MixerWindow LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Sound Galaxy Pro16 Extra Mixer", DID_MixerWindow, 0, 0, 215, 
+            102, FS_MOUSEALIGN, FCF_SYSMENU | FCF_TITLEBAR | FCF_MINBUTTON | 
+            FCF_NOBYTEALIGN
+            PRESPARAMS PP_FONTNAMESIZE, "9.WarpSans Bold"
+    BEGIN
+        GROUPBOX        "Master", 1001, 0, 20, 26, 82
+        CONTROL         "", DID_MASTERL, 5, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_MASTERR, 14, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_MASTERLOCK, 1, 22, 21, 10
+        GROUPBOX        "Voice", 1005, 30, 20, 21, 82
+        CONTROL         "", DID_VOICEL, 33, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_VOICER, 42, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_VOICELOCK, 31, 22, 18, 10
+        GROUPBOX        "FM", 1009, 52, 20, 21, 82
+        CONTROL         "", DID_FML, 55, 33, 6, 60, WC_SCROLLBAR, SBS_VERT | 
+                        WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_FMR, 64, 33, 6, 60, WC_SCROLLBAR, SBS_VERT | 
+                        WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_FMLOCK, 53, 22, 18, 10
+        GROUPBOX        "CD", 1013, 74, 20, 21, 82
+        CONTROL         "", DID_CDL, 77, 33, 6, 60, WC_SCROLLBAR, SBS_VERT | 
+                        WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_CDR, 86, 33, 6, 60, WC_SCROLLBAR, SBS_VERT | 
+                        WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_CDLOCK, 75, 22, 18, 10
+        GROUPBOX        "Line-In", 1017, 96, 20, 25, 82
+        CONTROL         "", DID_LINEL, 101, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_LINER, 110, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_LINELOCK, 97, 22, 18, 10
+        GROUPBOX        "Mic", 1021, 125, 20, 21, 82
+        CONTROL         "", DID_MICL, 128, 33, 6, 60, WC_SCROLLBAR, SBS_VERT | 
+                        WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_MICR, 137, 33, 6, 60, WC_SCROLLBAR, SBS_VERT | 
+                        WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_MICLOCK, 126, 22, 18, 10
+        GROUPBOX        "Spk", 1023, 147, 20, 17, 82
+        CONTROL         "", DID_SPK, 152, 33, 6, 60, WC_SCROLLBAR, SBS_VERT | 
+                        WS_TABSTOP | WS_VISIBLE
+        GROUPBOX        "Bass", 1025, 168, 20, 23, 82
+        CONTROL         "", DID_BASSL, 172, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_BASSR, 180, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_BASSLOCK, 169, 22, 18, 10
+        GROUPBOX        "Treble", 1029, 192, 20, 23, 82
+        CONTROL         "", DID_TREBLEL, 196, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", DID_TREBLER, 204, 33, 6, 60, WC_SCROLLBAR, 
+                        SBS_VERT | WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "Lock", DID_TREBLELOCK, 193, 22, 18, 10
+        GROUPBOX        "Settings", 1033, 0, 0, 215, 19
+        LTEXT           "Base port: (eg. 220)", 1034, 2, 3, 54, 8
+        ENTRYFIELD      "", DID_BASEPORT, 60, 4, 32, 8, ES_MARGIN
+        AUTOCHECKBOX    "Re-set settings in every second", DID_AUTOSET, 114, 
+                        8, 97, 7
+        AUTOCHECKBOX    "Re-read settings in every second", DID_AUTOREAD, 
+                        114, 1, 97, 8
+    END
+END
